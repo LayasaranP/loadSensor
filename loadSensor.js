@@ -41,7 +41,7 @@ device.on('connect', () => {
       id: getRandomElv(),
       load: parseFloat(getRandomLoad()),
       unit: 'kg',
-      timestamp: new Date().toLocaleTimeString()
+      timestamp: new Date(Date.now()).toLocaleTimeString()
     };
 
     device.publish('sensor/load', JSON.stringify(loadData), (err) => {
